@@ -1,0 +1,18 @@
+.overlay {
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal {
+  top: 0;
+  left: 0;
+}
+.mobile-content-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0;
+  
+}
+.bottom{
+  align-self: flex-end;
+}
