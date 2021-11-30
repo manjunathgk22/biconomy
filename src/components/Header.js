@@ -1,13 +1,11 @@
 import React from 'react'
+import Constant from '../constant/Constant';
 
 const Header = ({account, balance, ...props}) => {
-  console.log('====================================');
-  console.log(account, balance);
-  console.log('====================================');
   return (
-    <div className="text-dark flex justify-end padding-md one-flx space-between dark-bg text-white">
+    <div className={`text-dark flex justify-end padding-md space-between dark-bg text-white`}>
       <div />
-      <div>ID: {account}</div>
+      <div>ID: {Constant.isMobile ? account.substring(0,10) + '...': account}</div>
       <div>Balance: {balance}</div>
     </div>
   )

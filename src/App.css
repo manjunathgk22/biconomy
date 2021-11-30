@@ -1,7 +1,9 @@
 :root{
-  --dark: #283944;
+  --dark: #0C0E12;
   --white: #ffffff;
-  --grey: #ececec
+  --grey: #ececec;
+  --yellow: #F0B90B;
+  --text: #262930;
 }
 .App {
   background-color: var(--grey);
@@ -13,9 +15,16 @@
 .f{
   display: flex;
 }
+.text{
+  color: var(--text);
+}
 .flex{
   display: flex;
 } 
+.flex-column{
+  flex-direction: column;
+  display: flex;
+}
 .align-center{
   align-items: center;
 } 
@@ -33,6 +42,9 @@
   display: flex;
   height: 100%;
   width: 100%;
+}
+.one-flex{
+  flex:1
 }
 .full-width-height-viewport {
   height: 100vh;
@@ -77,19 +89,137 @@
   cursor: pointer;
 }
 .btn{
-  transition: all 0.3s;
+  transition: all 0.2s;
+  width: fit-content;
+  height: 40px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .flat{
+  color: var(--white);
+  background-color: var(--dark);
+}
+.flat.yellow{
+  background-color: var(--yellow);
   color: var(--dark);
-  background-color: var(--white);
 }
 .outline{
-  border : 1px solid var(--white)
+  border : 1px solid var(--dark);
+  color: (var(--dark))
 }
 .btn:hover{
-  transform: scale(1.1);
+  transform: scale(1);
   font-weight: 700;
 }
 .white-border{
   border: 1px solid var(--white);
+}
+.border{
+  border: 1px solid var(--dark);
+}
+.white-bg{
+  background-color: var(--white);
+}
+.cross{
+  margin-left: 20px;
+  border-radius: 50%;
+  border: 1px solid;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.border-bottom{
+  border-bottom: 1px solid var(--dark);
+}
+@media (min-width: 480px){
+  .popup-width{
+    min-width: 480px;
+  }
+}
+.margin-auto{
+  margin: auto;
+}
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: var(--white);
+  border: 1px solid var(--yellow);
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .radio-checkmark {
+  background-color: #ccc;
+}
+
+.radio-container input:checked ~ .radio-checkmark {
+  background-color: var(--yellow);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .radio-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .radio-checkmark:after {
+ 	top: 4px;
+	left: 4px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: white;
+}
+.ml-sm{
+  margin-left: 5px;
+}
+.mr-sm{
+  margin-right: 5px;
+}
+.ml-md{
+  margin-left: 15px;
+}
+.mr-md{
+  margin-right: 15px;
+}
+.semi-bold{
+  font-weight: 600;
+}
+.text-center{
+  text-align: center;
 }
